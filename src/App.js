@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Header.js';
+import Menu from './Menu.js';
+import Btn from './Button.js'
 
 function App() {
+  let dark = true;
+  let colorChange = () => {
+      console.log({dark});
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <div>
+  <Header />
+  <Menu firstName="Me" children={ <Btn /> } onClick={colorChange}/>
+  </div>
+  )
 }
 
 export default App;
